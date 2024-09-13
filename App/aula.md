@@ -33,10 +33,12 @@ Como um lego, você irá  utlizar peças para  criar algoritmos, ou seja, resolv
 ## Operadores:
 - [x] Operadores de atribuição de valores (=)
 - [x] Operador de concatenação (+)
-- [x] Operador de comparação: Igual (==), diferente(!=), menor(<), maior(>), menor igual(<=), maior igual(>=),
+- [x] Operador de comparação: Igual (==), diferente(!=), menor(<), maior(>), menor igual(<=), maior igual(>=)
+- [x] Spread opetaor: ...
 
 ### Array:
 - [x] Uma lista que contêm qualquer tipo de dados
+- [x] Métodos de array: push, [find, forEach, filter]: HOF(Higher Order Functions)
 
 ### Objetos:
 [x] Atributos e métodos
