@@ -64,4 +64,5 @@ Como um lego, você irá  utlizar peças para  criar algoritmos, ou seja, resolv
 ## Programação assicronas e Promisses:
 - [x] Uso de funcões assicronas (async, await)
 
-parei nos 48:41
+aula 3
+parei nos 18:18
