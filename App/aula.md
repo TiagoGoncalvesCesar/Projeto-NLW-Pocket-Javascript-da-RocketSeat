@@ -65,4 +65,4 @@ Como um lego, você irá  utlizar peças para  criar algoritmos, ou seja, resolv
 - [x] Uso de funcões assicronas (async, await)
 
 aula 3
-parei nos 18:18
+parei nos 24:16

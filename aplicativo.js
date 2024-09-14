@@ -1,7 +1,7 @@
 const { select, input, checkbox } = require("@inquirer/prompts");
 
 let meta = {
-  value: "Tomar 3l de água por dia",
+  value: "Tomar 3l de água por dia.",
   checked: false,
 };
 
@@ -41,7 +41,7 @@ const listarMetas = async () => {
     });
     meta.checked = true;
   });
-  console.log("Meta(s) marcadas como concluída(s)");
+  console.log("Meta(s) marcadas como concluída(s).");
 };
 
 const metasRealizadas = async () => {
@@ -55,27 +55,49 @@ const metasRealizadas = async () => {
   }
 
   await select({
-    message: "Metas realizadas " + realizadas.length,
-    choices: [...realizadas]
+    message: "Metas realizadas: " + realizadas.length,
+    choices: [...realizadas],
   });
 };
 
 const metasAbertas = async () => {
-  const abertas = metas.filter((meta
-  )=>{
+  const abertas = metas.filter((meta) => {
     return meta.checked != true;
-  })
+  });
 
-if(abertas.length == 0){
-  console.log("Não existem metas abertas!");
-  return;
-}
+  if (abertas.length == 0) {
+    console.log("Não existem metas abertas!");
+    return;
+  }
 
-await select({
-  message: "Metas abertas " + abertas.length,
-  choices: [...abertas]
-})
+  await select({
+    message: "Metas abertas:  " + abertas.length,
+    choices: [...abertas],
+  });
+};
 
+const deletarMetas = async () => {
+  const metasDesmarcadas = metas.map((meta) => {
+    return { value: meta.value, checked: false };
+  });
+
+  const itensADeletar = await checkbox({
+    message: "Selecione item para deletar.",
+    choices: [...metasDesmarcadas],
+    instructions: false,
+  });
+
+  if (itensADeletar.length == 0) {
+    console.log("Nenhum item para deletar.");
+    return;
+  }
+
+  itensADeletar.forEach((item) => {
+    metas = metas.filter((metas) => {
+      return metas.value != item
+    });
+  }); 
+  console.log("Meta(s) deletada(s) com sucesso.");
 };
 
 const start = async () => {
@@ -100,6 +122,10 @@ const start = async () => {
           value: "abertas",
         },
         {
+          name: "Deletar metas",
+          value: "deletar",
+        },
+        {
           name: "sair",
           value: "sair",
         },
@@ -118,6 +144,9 @@ const start = async () => {
         break;
       case "abertas":
         await metasAbertas();
+        break;
+      case "deletar":
+        await deletarMetas();
         break;
       case "sair":
         console.log("Até a proxima!");
