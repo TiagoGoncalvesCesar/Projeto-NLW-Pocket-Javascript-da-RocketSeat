@@ -60,6 +60,12 @@ Como um lego, você irá  utlizar peças para  criar algoritmos, ou seja, resolv
 ## Módulos em Node.js:
 - [x] Importação de módulos (require, ComomJS)
 - [x] Biblioteca 'inquier'para criar prompts interativos
+- [x] FS (file system)
+
+## JSON:
+- [x] Javascript  objet notation (.json)
+- [x] JSON.parse(): transforma de JSON de para Javascript
+- [x] JSON.stringfy(): transforma de Javascript para JSON
 
 ## Programação assicronas e Promisses:
 - [x] Uso de funcões assicronas (async, await)
